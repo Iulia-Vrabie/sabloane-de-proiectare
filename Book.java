@@ -1,40 +1,33 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
-public class Book {
-    private enum ContentType {PARAGRAPH, IMAGE, TABLE}
-    String title;
-    LinkedHashMap<String, ContentType> content;
-    public Book(String title) {
-        this.title = title;
-        this.content = new LinkedHashMap<>();
-    }
-
-    public void createNewParagraph(String name) {
-        content.put(name, ContentType.PARAGRAPH);
-    }
-
-    public void createNewImage(String name) {
-        content.put(name, ContentType.IMAGE);
-    }
-
-    public void createNewTable(String name) {
-        content.put(name, ContentType.TABLE);
-    }
-
-    public void print() {
-        StringBuilder output = new StringBuilder();
-        output.append(title);
-        for (Map.Entry<String, ContentType> entry : content.entrySet()) {
-            String name = entry.getKey();
-            ContentType type = entry.getValue();
-            switch (type) {
-                case PARAGRAPH -> output.append("\n " + name);
-                case IMAGE -> output.append("\n " + name);
-                case TABLE -> output.append("\n " + name);
-                default -> output.append("\n NONE");
-            }
-        }
-        System.out.print(output);
-    }
+public class Book{
+	
+	public TableOfContents tableOfContents = new TableOfContents();
+	public String name;
+	public Author author;
+	
+	public Book (String name) {
+		this.name=name;
+		this.author=author;
+	}
+	
+	public void addAuthor (Author author) {
+		this.author=author; 
+	}
+	
+	public int createChapter(String chapter) {
+		Chapter c = new Chapter(chapter);
+		tableOfContents.append(c);
+		return tableOfContents.content.size()-1;
+	}
+	
+	public Chapter getChapter (int i) {
+		return tableOfContents.content.get(i);
+	}
+	
+	public void print() {
+		for(int i=0;i<tableOfContents.content.size();i++) {
+			System.out.println(tableOfContents.content.get(i));
+		}
+	}
 }
