@@ -1,15 +1,27 @@
-import java.util.ArrayList;
+public class TableOfContents implements Element{
 
-public class TableOfContents {
-	
-	public ArrayList<Chapter> content = new ArrayList<Chapter>();
-	
-	public TableOfContents () {
-		this.content=content;
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	public void append(Chapter chapter) {
-		this.content.add(chapter);
+
+	@Override
+	public void add(Element element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Element element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Element get(int index) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
