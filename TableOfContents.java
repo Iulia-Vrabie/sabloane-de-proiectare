@@ -24,4 +24,11 @@ public class TableOfContents implements Element{
 		return null;
 	}
 	
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitTableOfContents(this);
+	}
+
+
+	
 }

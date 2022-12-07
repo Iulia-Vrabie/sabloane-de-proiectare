@@ -26,4 +26,16 @@ public class Paragraph implements Element{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void setAlign(AlignStrategy alignStrategy) {
+		this.text = alignStrategy.render(this.text);
+		
+	}
+
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitParagraph(this);
+		
+	}
+	
 }
