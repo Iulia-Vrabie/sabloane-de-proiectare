@@ -14,3 +14,5 @@ https://github.com/Iulia-Vrabie/sabloane-de-proiectare/tree/cea540a4c156bbe61762
 - in clasa chapter, trebuie sa ai metoda de print unde printezi titlul si apelezi pt subchapters
 
 Nota 8
+
+# Nota finala: 9
